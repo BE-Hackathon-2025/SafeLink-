@@ -1,0 +1,174 @@
+.rescueLog {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.rescueLog__header {
+  margin-bottom: 8px;
+}
+
+.rescueLog__header h2 {
+  margin: 0;
+  font-size: 24px;
+  color: #0f172a;
+  font-weight: 700;
+}
+
+.rescueLog__subtitle {
+  margin: 4px 0 0;
+  font-size: 14px;
+  color: #6b7280;
+}
+
+.rescueLog__filters {
+  display: flex;
+  gap: 8px;
+  margin-bottom: 12px;
+}
+
+.filterBtn {
+  padding: 6px 14px;
+  border: 1px solid #e5e7eb;
+  border-radius: 8px;
+  background: #f9fafb;
+  color: #6b7280;
+  font-size: 13px;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.filterBtn:hover {
+  background: #f3f4f6;
+  border-color: #d1d5db;
+}
+
+.filterBtn--active {
+  background: #0f172a;
+  color: #e5e7eb;
+  border-color: #0f172a;
+}
+
+.rescueLog__table {
+  background: #f9fafb;
+  border-radius: 14px;
+  border: 1px solid #e5e7eb;
+  overflow: hidden;
+}
+
+.logTable {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 13px;
+}
+
+.logTable thead {
+  background: #eff6ff;
+}
+
+.logTable th {
+  padding: 10px 12px;
+  text-align: left;
+  font-weight: 600;
+  color: #1e40af;
+  font-size: 12px;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.logTable td {
+  padding: 10px 12px;
+  border-bottom: 1px solid #e5e7eb;
+  color: #374151;
+}
+
+.logTable tbody tr:hover {
+  background: #f3f4f6;
+}
+
+.logTable tbody tr:last-child td {
+  border-bottom: none;
+}
+
+.logTable__id {
+  font-family: "Courier New", monospace;
+  font-size: 12px;
+  color: #6b7280;
+}
+
+.logTable__location {
+  font-family: "Courier New", monospace;
+  font-size: 11px;
+  color: #6b7280;
+}
+
+.typeBadge {
+  display: inline-block;
+  padding: 3px 8px;
+  border-radius: 12px;
+  font-size: 11px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.typeBadge--accept {
+  background: #fef3c7;
+  color: #92400e;
+}
+
+.typeBadge--arrived {
+  background: #d1fae5;
+  color: #065f46;
+}
+
+.rescueLog__empty {
+  padding: 40px;
+  text-align: center;
+  color: #6b7280;
+}
+
+.rescueLog__loading,
+.rescueLog__error {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 40px;
+  gap: 12px;
+}
+
+.rescueLog__error p {
+  color: #dc2626;
+  margin: 0;
+}
+
+.rescueLog__error button {
+  padding: 8px 16px;
+  border: none;
+  border-radius: 8px;
+  background: #0f172a;
+  color: #e5e7eb;
+  cursor: pointer;
+  font-size: 13px;
+}
+
+.rescueLog__error button:hover {
+  background: #1e293b;
+}
+
+.spinner {
+  width: 20px;
+  height: 20px;
+  border-radius: 999px;
+  border: 2px solid #bfdbfe;
+  border-top-color: #1d4ed8;
+  animation: spin 0.7s linear infinite;
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+

@@ -1,0 +1,267 @@
+.nearbyDevices {
+  padding: 0;
+}
+
+.nearbyDevices__header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 24px;
+  padding-bottom: 20px;
+  border-bottom: 1px solid #e2e8f0;
+}
+
+.nearbyDevices__title {
+  margin: 0;
+  font-size: 28px;
+  font-weight: 700;
+  color: #0f172a;
+  letter-spacing: -0.5px;
+}
+
+.nearbyDevices__subtitle {
+  margin: 6px 0 0;
+  font-size: 14px;
+  color: #64748b;
+  font-weight: 400;
+  line-height: 1.5;
+}
+
+.nearbyDevices__refreshBtn {
+  padding: 8px 16px;
+  background: #3b82f6;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.nearbyDevices__refreshBtn:hover:not(:disabled) {
+  background: #2563eb;
+  transform: translateY(-1px);
+  box-shadow: 0 4px 8px rgba(59, 130, 246, 0.3);
+}
+
+.nearbyDevices__refreshBtn:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.nearbyDevices__loading {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  padding: 60px 20px;
+  color: #64748b;
+  font-size: 14px;
+}
+
+.nearbyDevices__error {
+  padding: 16px;
+  background: #fef2f2;
+  border: 1px solid #fca5a5;
+  border-radius: 12px;
+  color: #dc2626;
+  margin-bottom: 24px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.nearbyDevices__error button {
+  padding: 6px 12px;
+  background: #dc2626;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  font-size: 12px;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.nearbyDevices__empty {
+  text-align: center;
+  padding: 60px 20px;
+  background: #f8fafc;
+  border-radius: 16px;
+  border: 1px solid #e2e8f0;
+}
+
+.nearbyDevices__emptyIcon {
+  font-size: 64px;
+  margin-bottom: 16px;
+}
+
+.nearbyDevices__empty h2 {
+  margin: 0 0 8px 0;
+  font-size: 20px;
+  color: #1e293b;
+}
+
+.nearbyDevices__empty p {
+  margin: 0 0 8px 0;
+  color: #64748b;
+  font-size: 14px;
+}
+
+.nearbyDevices__emptyHint {
+  margin-top: 12px !important;
+  font-size: 12px !important;
+  color: #94a3b8 !important;
+}
+
+.nearbyDevices__grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+  gap: 20px;
+}
+
+.deviceCard {
+  background: #ffffff;
+  border: 1px solid #e2e8f0;
+  border-radius: 16px;
+  padding: 20px;
+  transition: all 0.2s;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1), 0 1px 2px rgba(0, 0, 0, 0.06);
+}
+
+.deviceCard:hover {
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1), 0 2px 4px rgba(0, 0, 0, 0.06);
+  transform: translateY(-2px);
+  border-color: #3b82f6;
+}
+
+.deviceCard__header {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 16px;
+  padding-bottom: 16px;
+  border-bottom: 1px solid #f1f5f9;
+}
+
+.deviceCard__icon {
+  font-size: 32px;
+  width: 48px;
+  height: 48px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #eff6ff;
+  border-radius: 12px;
+}
+
+.deviceCard__info {
+  flex: 1;
+}
+
+.deviceCard__name {
+  margin: 0 0 4px 0;
+  font-size: 16px;
+  font-weight: 700;
+  color: #0f172a;
+}
+
+.deviceCard__id {
+  margin: 0;
+  font-size: 12px;
+  color: #64748b;
+  font-family: "Courier New", monospace;
+}
+
+.deviceCard__details {
+  margin-bottom: 16px;
+}
+
+.deviceCard__detail {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 8px 0;
+  font-size: 13px;
+}
+
+.deviceCard__detailLabel {
+  color: #64748b;
+  font-weight: 500;
+}
+
+.deviceCard__detailValue {
+  color: #1e293b;
+  font-weight: 600;
+}
+
+.deviceCard__capabilities {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  margin-top: 12px;
+  padding-top: 12px;
+  border-top: 1px solid #f1f5f9;
+}
+
+.deviceCard__capability {
+  padding: 4px 10px;
+  background: #eff6ff;
+  color: #1e40af;
+  border-radius: 12px;
+  font-size: 11px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.deviceCard__actions {
+  margin-top: 16px;
+  padding-top: 16px;
+  border-top: 1px solid #f1f5f9;
+}
+
+.deviceCard__messageBtn {
+  width: 100%;
+  padding: 12px;
+  background: linear-gradient(135deg, #3b82f6 0%, #2563eb 100%);
+  color: white;
+  border: none;
+  border-radius: 10px;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s;
+  box-shadow: 0 2px 4px rgba(59, 130, 246, 0.2);
+}
+
+.deviceCard__messageBtn:hover {
+  background: linear-gradient(135deg, #2563eb 0%, #1d4ed8 100%);
+  transform: translateY(-1px);
+  box-shadow: 0 4px 8px rgba(59, 130, 246, 0.3);
+}
+
+.spinner {
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  border: 3px solid #e2e8f0;
+  border-top-color: #3b82f6;
+  animation: spin 0.7s linear infinite;
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@media (max-width: 768px) {
+  .nearbyDevices__grid {
+    grid-template-columns: 1fr;
+  }
+}
+
