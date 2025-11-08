@@ -38,6 +38,12 @@ export default function Sidebar() {
         >
           Rescue log
         </button>
+        <button
+          className={`sidebar__item ${isActive("/first-aid") ? "sidebar__item--active" : ""}`}
+          onClick={() => navigate("/first-aid")}
+        >
+          🩹 First Aid Guide
+        </button>
         
         <div className="sidebar__sectionTitle" style={{ marginTop: "24px" }}>
           Actions

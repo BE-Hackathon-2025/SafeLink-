@@ -7,6 +7,7 @@ import TopBar from "./components/layout/TopBar";
 import Dashboard from "./pages/Dashboard";
 import NearbyDevices from "./pages/NearbyDevices";
 import RescueLog from "./pages/RescueLog";
+import FirstAidGuide from "./pages/FirstAidGuide";
 import "./App.css";
 
 function AppContent() {
@@ -19,6 +20,7 @@ function AppContent() {
           <Route path="/" element={<Dashboard />} />
           <Route path="/nearby-devices" element={<NearbyDevices />} />
           <Route path="/rescues" element={<RescueLog />} />
+          <Route path="/first-aid" element={<FirstAidGuide />} />
           <Route path="/settings" element={
             <div className="pagePlaceholder">
               <h2>Settings</h2>

@@ -13,6 +13,8 @@ export default function TopBar() {
         return "Nearby Devices";
       case "/rescues":
         return "Rescue Log";
+      case "/first-aid":
+        return "AI First Aid Guide";
       case "/settings":
         return "Settings";
       default:
@@ -26,6 +28,8 @@ export default function TopBar() {
         return "Discover and connect with devices in your mesh network. Send direct messages to any device.";
       case "/rescues":
         return "Complete history of all rescue events and operations.";
+      case "/first-aid":
+        return "Get AI-powered first aid instructions based on your situation. Supports multiple languages with voice input.";
       case "/settings":
         return "Configure your SafeLink Mesh AI dashboard.";
       default:
