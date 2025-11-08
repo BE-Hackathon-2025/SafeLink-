@@ -15,11 +15,24 @@ const medaiRouter = require("./routes/medai");
 const routesRouter = require("./routes/routes");
 
 const app = express();
-const PORT = 4000;
+const PORT = process.env.PORT || 4000;
+const NODE_ENV = process.env.NODE_ENV || "development";
 
-app.use(cors());
-app.use(bodyParser.json());
-app.use(bodyParser.urlencoded({ extended: true }));
+// CORS configuration for production
+const corsOptions = {
+  origin: NODE_ENV === "production" 
+    ? process.env.FRONTEND_URL 
+      ? process.env.FRONTEND_URL.split(",").map(url => url.trim())
+      : "*"
+    : "*",
+  credentials: true,
+  methods: ["GET", "POST", "PUT", "PATCH", "DELETE", "OPTIONS"],
+  allowedHeaders: ["Content-Type", "Authorization"],
+};
+
+app.use(cors(corsOptions));
+app.use(bodyParser.json({ limit: "10mb" }));
+app.use(bodyParser.urlencoded({ extended: true, limit: "10mb" }));
 
 app.get("/health", (req, res) => {
   res.json({ status: "ok", ts: new Date().toISOString() });
@@ -34,7 +47,11 @@ app.use("/api/first-aid", firstAidRouter);
 app.use("/api/medai", medaiRouter);
 app.use("/api/routes", routesRouter);
 
-app.listen(PORT, () => {
-  console.log(`[SafeLink][Server] 🌐 Listening on http://localhost:${PORT}`);
+app.listen(PORT, "0.0.0.0", () => {
+  console.log(`[SafeLink][Server] 🌐 Server running on port ${PORT}`);
+  console.log(`[SafeLink][Server] 🌍 Environment: ${NODE_ENV}`);
+  if (NODE_ENV === "production") {
+    console.log(`[SafeLink][Server] ✅ Production mode enabled`);
+  }
 });
 
