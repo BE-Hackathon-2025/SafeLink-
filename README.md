@@ -1,5 +1,4 @@
-# SafeLink Mesh AI
-
+# SafeLink 
 **Offline mesh networking with AI-powered routing for emergency communications**
 
 ## 🎯 Overview
